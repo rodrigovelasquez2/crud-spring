@@ -6,6 +6,7 @@ import com.cursojava.curso.utils.JWTUtil;
 import de.mkammerer.argon2.Argon2;
 import de.mkammerer.argon2.Argon2Factory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,8 +19,11 @@ import java.util.List;
  */
 @RestController
 public class UsuarioController {
+
     @Autowired // Hace que la clase usuario cree el objeto y la guarde en la variable usuuarioDap
+    @Qualifier("usuarioService")
     private UsuarioDAO usuarioDAO;
+
     @Autowired
     private JWTUtil jwtUtil;
 

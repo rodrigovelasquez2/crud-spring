@@ -15,7 +15,7 @@ import java.util.List;
 public class UsuarioDAOImp implements UsuarioDAO {
 
     @PersistenceContext
-    private EntityManager entityManager;
+    private EntityManager entityManager; //JPA puro
 
     @Override
     @Transactional
@@ -46,7 +46,7 @@ public class UsuarioDAOImp implements UsuarioDAO {
                 .getResultList();
 
         if (lista.isEmpty()) { // Lista vacia
-            return null; // nulo
+            return null; // nulo,
         }//Fin if
 
         String passwordHashed = lista.get(0).getPassword(); // Obtienes la contraseña
